@@ -1,13 +1,28 @@
-const speed = 80
-const speedlimit =70
-const points =Math.abs((speed - sppedlimit)/5)
-if(speed <=70){
-    console.log("speed is good")
-}
-else if(points >=12){
-    console.log("lisence is apprehended")
+function calculateDemeritPoints(speed) {
+    const speedLimit = 70;
+    let demeritPoints = 0;
+
+    if (speed <= speedLimit) {
+        console.log("Ok");
+    } else {
+        demeritPoints = Math.floor((speed - speedLimit) / 5);
+        console.log("Points:", demeritPoints);
+        
+        if (demeritPoints > 12) {
+            console.log("License is apprehended");
+        }
+    }
 }
 
-else if(speed >70){
-    console.log("pointss" + points)
+function main() {
+    let input = prompt("Enter the speed of the car:");
+    let speed = parseInt(input);
+    
+    if (!isNaN(speed)) {
+        calculateDemeritPoints(speed);
+    } else {
+        console.log("Invalid input! Please retry and enter a valid speed.");
+    }
 }
+
+main();

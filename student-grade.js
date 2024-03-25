@@ -1,25 +1,37 @@
-const grades = 50
-if (grades>79 && grades<=100)
+function grades(mark) {
+if (mark > 79)
 {
-    console.log("A");
+    return "A";
 }
-else if (grades>60 && grades<=79)
+else if (mark>=60 && mark<=79)
 {
-    console.log("B");
+    return "B";
 }
-else if (grades>49 && grades<=59)
+else if (mark>=49 && mark<=59)
 {
-    console.log("C");
+    return "C";
 }
-else if (grades>40 && grades<=49)
+else if (mark>=40 && mark<=49)
 {
-    console.log("D");
+    return "D";
 }
-else if (grades>0 && grades<=39)
+else 
 {
-    console.log("E");
-}
-else if (grades<0 || grades>100){
-    console.log("Not valid marks");
+   return "E";
 }
 
+}
+
+function main() {
+    let input = prompt("Enter the student's mark (between 0 and 100):");
+    let mark = parseFloat(input);
+    
+    if (!isNaN(mark) && mark >= 0 && mark <= 100) {
+        let grade = grades(mark);
+        alert("The student's grade is: " + grade);
+    } else {
+        alert("Invalid input! Please enter a mark between 0 and 100.");
+    }
+}
+
+main();
