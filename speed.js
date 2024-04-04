@@ -3,13 +3,13 @@ function calculateDemeritPoints(speed) {
     let demeritPoints = 0;
 
     if (speed <= speedLimit) {
-        console.log("Ok");
+        window.alert("Ok");
     } else {
         demeritPoints = Math.floor((speed - speedLimit) / 5);
-        console.log("Points:", demeritPoints);
+        window.alert("Points:"+ demeritPoints);
         
         if (demeritPoints > 12) {
-            console.log("License is apprehended");
+            window.alert("License is apprehended");
         }
     }
 }
@@ -21,7 +21,7 @@ function main() {
     if (!isNaN(speed)) {
         calculateDemeritPoints(speed);
     } else {
-        console.log("Invalid input! Please retry and enter a valid speed.");
+        window.alert("Invalid input! Please retry and enter a valid speed.");
     }
 }
 

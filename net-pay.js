@@ -68,14 +68,14 @@ const benefits = parseFloat(prompt("Enter benefits:"));
 
 // Validate input
 if (isNaN(basicSalary) || isNaN(benefits)) {
-    console.log("Invalid input. Please enter numeric values for basic salary and benefits.");
+    window.alert("Invalid input. Please enter numeric values for basic salary and benefits.");
 } else {
     // Calculate and display net salary
     const salaryDetails = calculateNetSalary(basicSalary, benefits);
-    console.log("Gross Salary:", salaryDetails.grossSalary);
-    console.log("Payee (Tax):", salaryDetails.payee);
-    console.log("NHIF Deductions:", salaryDetails.nhif);
-    console.log("NSSF Deductions:", salaryDetails.nssf);
-    console.log("Total Deductions:", salaryDetails.totalDeductions);
-    console.log("Net Salary:", salaryDetails.netSalary);
+    window.alert("Gross Salary:"+ salaryDetails.grossSalary);
+    window.alert("Payee (Tax):"+ salaryDetails.payee);
+    window.alert("NSSF Deductions:"+ salaryDetails.nssf);
+    window.alerrt("Total Deductions:"+ salaryDetails.totalDeductions);
+    window.alert("NHIF Deductions:"+ salaryDetails.nhif);
+    window.alert("Net Salary:"+ salaryDetails.netSalary);
 }
